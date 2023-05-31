@@ -1,5 +1,5 @@
 const { Router } = require("express");
-const { getLivros , getLivro , postLivro,  patchLivro} = require("../controllers/livro")
+const { getLivros , getLivro , postLivro,  patchLivro, deleteLivro} = require("../controllers/livro")
 
 const router = Router();
 
@@ -9,9 +9,7 @@ router.get('/:id', getLivro)
 
 router.post('/', postLivro)
 
-router.delete('/', (req,res) => {
-    res.send("VOCE ESTA UTILIZANDO METODO DELETE")
-})
+router.delete('/:id', deleteLivro)
 
 router.patch('/:id', patchLivro )
 
