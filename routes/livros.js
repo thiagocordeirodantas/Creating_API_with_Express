@@ -1,5 +1,5 @@
 const { Router } = require("express");
-const { getLivros , getLivro , postLivro} = require("../controllers/livro")
+const { getLivros , getLivro , postLivro,  patchLivro} = require("../controllers/livro")
 
 const router = Router();
 
@@ -13,9 +13,7 @@ router.delete('/', (req,res) => {
     res.send("VOCE ESTA UTILIZANDO METODO DELETE")
 })
 
-router.patch('/',  (req,res) => {
-    res.send("VOCE ESTA UTILIZANDO METODO PATCH")
-})
+router.patch('/:id', patchLivro )
 
 
 module.exports = router;
